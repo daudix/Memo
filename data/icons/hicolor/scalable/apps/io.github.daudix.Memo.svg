@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg height="128px" viewBox="0 0 128 128" width="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="100" x2="108" y1="352" y2="352">
+        <stop offset="0" stop-color="#ffa348"/>
+        <stop offset="0.5" stop-color="#ffbe6f"/>
+        <stop offset="1" stop-color="#ffa348"/>
+    </linearGradient>
+    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="20" x2="24" y1="120" y2="120">
         <stop offset="0" stop-color="#ff7800"/>
         <stop offset="0.5" stop-color="#ffa348"/>
         <stop offset="1" stop-color="#ff7800"/>
-    </linearGradient>
-    <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="20" x2="24" y1="120" y2="120">
-        <stop offset="0" stop-color="#e66100"/>
-        <stop offset="0.5" stop-color="#ff7800"/>
-        <stop offset="1" stop-color="#e66100"/>
     </linearGradient>
     <linearGradient id="c" gradientUnits="userSpaceOnUse">
         <stop offset="0" stop-color="#9a9996"/>
