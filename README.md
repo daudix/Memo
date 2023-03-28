@@ -21,7 +21,7 @@ Contributions are appreciated!
 
 ## Get Memo
 
-> Note Memo is not available to download from Flathub yet
+> **Note** Memo is not available to download from Flathub yet
 
 <!-- The recommended way of installing Memo is through [Flatpak](https://flatpak.org)  
 
