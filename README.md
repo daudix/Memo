@@ -12,6 +12,9 @@
 ###### Memo is a fork of [Paper](https://gitlab.com/posidon_software/paper), this have been done due to fact that it's currently not maintained
 
 
+![image](https://user-images.githubusercontent.com/77155297/228129487-89d3a8d9-6cce-4bad-8fac-3d20aa446cca.png)
+
+
 ## Some of Memo features:
 
  - Almost WYSIWYG markdown rendering
