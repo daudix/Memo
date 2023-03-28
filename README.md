@@ -1,8 +1,15 @@
-# <img src="./data/icons/hicolor/scalable/apps/io.github.daudix.Memo.svg" height="64"/>Memo
+<h1 align="center">
+  <img src="data/icons/hicolor/scalable/apps/io.github.daudix.Memo.svg" alt="Memo" width="192" height="192"/>
+  <br>
+  Memo
+</h1>
 
-## Take Markdown notes, in a pretty way
+<p align="center">
+  <strong>Take Markdown notes, in a pretty way</strong>
+</p>
 
-Contributions are appreciated!
+
+###### Memo is a fork of [Paper](https://gitlab.com/posidon_software/paper), this have been done due to fact that it's currently not maintained
 
 
 ## Some of Memo features:
