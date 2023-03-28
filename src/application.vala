@@ -1,6 +1,7 @@
 /* application.vala
  *
  * Copyright 2022 Zagura
+ * Copyright 2023 Daudix UFO
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -123,11 +124,11 @@ public class Memo.Application : Adw.Application {
 	    var about = new Adw.AboutWindow ();
 	    about.application_icon = Config.APP_ID;
 	    about.application_name = "Memo";
-	    about.developers = {"Zagura"};
-	    about.issue_url = "https://gitlab.com/posidon_software/memo/issues";
+	    about.developers = {"Zagura", "Daudix UFO"};
+	    about.issue_url = "https://github.com/daudix-UFO/Memo/issues";
 	    about.license_type = Gtk.License.GPL_3_0;
 	    about.version = Config.VERSION;
-	    about.website = "https://gitlab.com/posidon_software/memo";
+	    about.website = "https://github.com/daudix-UFO/Memo";
 		about.transient_for = this.active_window;
 		about.present ();
 	}
