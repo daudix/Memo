@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/notebook_preview.ui")]
-public class Paper.NotebookPreview : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/notebook_preview.ui")]
+public class Memo.NotebookPreview : Gtk.Box {
 
 	[GtkChild] private unowned Gtk.Label label;
 	[GtkChild] private unowned Gtk.Image icon;

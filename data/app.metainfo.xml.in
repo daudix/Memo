@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
 	<id>@app_id@</id>
-  <name translatable="no">Paper</name>
+  <name translatable="no">Memo</name>
   <summary>Take notes in Markdown</summary>
 	<description>
 	  <p>Create notebooks, take notes in markdown</p>
@@ -221,19 +221,19 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://zagura.one/dev/paper/screenshot/22_0801_desktop.png</image>
+      <image>https://zagura.one/dev/memo/screenshot/22_0801_desktop.png</image>
       <caption>Markdown document</caption>
     </screenshot>
     <screenshot type="default">
-      <image>https://zagura.one/dev/paper/screenshot/22_0801_desktop_minimal.png</image>
+      <image>https://zagura.one/dev/memo/screenshot/22_0801_desktop_minimal.png</image>
       <caption>Markdown document</caption>
     </screenshot>
     <screenshot>
-      <image>https://zagura.one/dev/paper/screenshot/22_0801_mobile.png</image>
+      <image>https://zagura.one/dev/memo/screenshot/22_0801_mobile.png</image>
       <caption>Markdown document</caption>
     </screenshot>
     <screenshot>
-      <image>https://zagura.one/dev/paper/screenshot/22_0801_mobile_list.png</image>
+      <image>https://zagura.one/dev/memo/screenshot/22_0801_mobile_list.png</image>
       <caption>List of notes</caption>
     </screenshot>
   </screenshots>
@@ -245,8 +245,8 @@
   <developer_name translatable="no">Zagura</developer_name>
   <project_group translatable="no">posidon</project_group>
 
-  <url type="homepage">https://gitlab.com/posidon_software/paper</url>
-  <url type="bugtracker">https://gitlab.com/posidon_software/paper/issues</url>
+  <url type="homepage">https://gitlab.com/posidon_software/memo</url>
+  <url type="bugtracker">https://gitlab.com/posidon_software/memo/issues</url>
 
   <branding>
     <color type="primary" scheme_preference="light">#c6eabf</color>

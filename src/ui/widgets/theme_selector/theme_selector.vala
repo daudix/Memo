@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/theme_selector.ui")]
-public class Paper.ThemeSelector : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/theme_selector.ui")]
+public class Memo.ThemeSelector : Gtk.Box {
 
     [GtkChild] unowned Gtk.CheckButton _auto;
     [GtkChild] unowned Gtk.CheckButton light;

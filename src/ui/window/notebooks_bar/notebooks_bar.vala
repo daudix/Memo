@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/notebooks_bar.ui")]
-public class Paper.NotebooksBar : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/notebooks_bar.ui")]
+public class Memo.NotebooksBar : Gtk.Box {
 
     public bool paned { get; set; default = false; }
 

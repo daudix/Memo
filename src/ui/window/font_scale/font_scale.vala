@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/font_scale.ui")]
-public class Paper.FontScale : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/font_scale.ui")]
+public class Memo.FontScale : Gtk.Box {
 
     [GtkChild] unowned Gtk.Button dec;
     [GtkChild] unowned Gtk.Button inc;

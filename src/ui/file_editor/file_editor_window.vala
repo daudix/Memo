@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/file_editor_window.ui")]
-public class Paper.FileEditorWindow : Adw.ApplicationWindow {
+[GtkTemplate (ui = "/io/github/daudix/Memo/file_editor_window.ui")]
+public class Memo.FileEditorWindow : Adw.ApplicationWindow {
 
 	[GtkChild] unowned Gtk.Label file_title;
 	[GtkChild] unowned Gtk.Label file_subtitle;
@@ -31,7 +31,7 @@ public class Paper.FileEditorWindow : Adw.ApplicationWindow {
 	construct {
 		add_action_entries (ACTIONS, this);
 
-        Gtk.IconTheme.get_for_display (display).add_resource_path ("/io/posidon/Paper/graphics/");
+        Gtk.IconTheme.get_for_display (display).add_resource_path ("/io/github/daudix/Memo/graphics/");
 	}
 
 	public FileEditorWindow (Application app, File file) {

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: io.posidon.Paper main\n"
+"Project-Id-Version: io.github.daudix.Memo main\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-19 17:20+0200\n"
 "PO-Revision-Date: 2022-05-24 10:57-0300\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: data/app.desktop.in:8 src/ui/strings.vala:3
-msgid "Paper"
-msgstr "Paper"
+msgid "Memo"
+msgstr "Memo"
 
 #: data/app.desktop.in:9
 msgid "Notes Manager"
@@ -486,7 +486,7 @@ msgstr "_Teclas de Atalho"
 
 #: src/ui/window/app_menu/app_menu.blp:42
 msgid "_About"
-msgstr "_Sobre o Paper"
+msgstr "_Sobre o Memo"
 
 #: src/ui/window/notebooks_bar/notebook_create_popup.blp:54
 msgid "Notebook Name"

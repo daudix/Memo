@@ -1,6 +1,6 @@
 using Gee;
 
-public class Paper.Trash : Object, ListModel, NoteContainer {
+public class Memo.Trash : Object, ListModel, NoteContainer {
 
     public string name {
         get { return _name; }

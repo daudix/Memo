@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/preferences.ui")]
-public class Paper.PreferencesWindow : Adw.PreferencesWindow {
+[GtkTemplate (ui = "/io/github/daudix/Memo/preferences.ui")]
+public class Memo.PreferencesWindow : Adw.PreferencesWindow {
 
 	[GtkChild] unowned Gtk.FontButton font_button;
 	[GtkChild] unowned Gtk.FontButton font_button_monospace;

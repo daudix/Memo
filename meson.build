@@ -1,5 +1,5 @@
 project(
-  'io.posidon.Paper',
+  'io.github.daudix.Memo',
   ['c', 'vala'],
   version: '23.3',
   meson_version: '>= 0.59.4',

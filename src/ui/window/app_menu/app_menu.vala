@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/app_menu.ui")]
-public class Paper.AppMenu : Adw.Bin {
+[GtkTemplate (ui = "/io/github/daudix/Memo/app_menu.ui")]
+public class Memo.AppMenu : Adw.Bin {
 
     [GtkChild] unowned Gtk.PopoverMenu popover;
 

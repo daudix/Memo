@@ -1,9 +1,9 @@
 {
-    "app-id" : "io.posidon.Paper",
+    "app-id" : "io.github.daudix.Memo",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",
-    "command" : "io.posidon.Paper",
+    "command" : "io.github.daudix.Memo",
     "finish-args" : [
         "--share=ipc",
         "--socket=fallback-x11",
@@ -34,12 +34,12 @@
             }]
         },
         {
-            "name" : "Paper",
+            "name" : "Memo",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [{
                 "type" : "git",
-                "url" : "https://gitlab.com/daudix-UFO/paper"
+                "url" : "https://gitlab.com/daudix-UFO/memo"
             }]
         }
     ]

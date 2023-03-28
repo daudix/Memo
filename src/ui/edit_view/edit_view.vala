@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/edit_view.ui")]
-public class Paper.EditView : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/edit_view.ui")]
+public class Memo.EditView : Gtk.Box {
 
     public bool toolbar_enabled { get; set; }
 

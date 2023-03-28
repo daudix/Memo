@@ -1,11 +1,11 @@
-# Language cat translations for io.posidon.Paper package.
-# Copyright (C) 2022 THE io.posidon.Paper'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the io.posidon.Paper package.
+# Language cat translations for io.github.daudix.Memo package.
+# Copyright (C) 2022 THE io.github.daudix.Memo'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.daudix.Memo package.
 # Automatically generated, 2022.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: io.posidon.Paper\n"
+"Project-Id-Version: io.github.daudix.Memo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-19 17:20+0200\n"
 "PO-Revision-Date: 2022-05-18 18:45+0200\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/app.desktop.in:8 src/ui/strings.vala:3
-msgid "Paper"
-msgstr "Paper"
+msgid "Memo"
+msgstr "Memo"
 
 #: data/app.desktop.in:9
 msgid "Notes Manager"
@@ -112,7 +112,7 @@ msgstr "Recoloració de la interfície, basada en el color del quadern"
 
 #: data/app.metainfo.xml.in:14
 msgid "Trash can"
-msgstr "Paperera"
+msgstr "Memoera"
 
 #: data/app.metainfo.xml.in:143
 msgid "Markdown document"
@@ -120,7 +120,7 @@ msgstr "Document markdown"
 
 #: src/ui/strings.vala:4 src/ui/window/notebooks_bar/notebooks_bar.blp:125
 msgid "Trash"
-msgstr "Paperera"
+msgstr "Memoera"
 
 #: src/ui/strings.vala:5
 #, c-format
@@ -129,11 +129,11 @@ msgstr "%d Notes"
 
 #: src/ui/strings.vala:6
 msgid "Are you sure you want to delete everything in the trash?"
-msgstr "De veritat vol eliminar-ho tot en la paperera?"
+msgstr "De veritat vol eliminar-ho tot en la memoera?"
 
 #: src/ui/strings.vala:7 src/ui/window/window.blp:54
 msgid "Empty Trash"
-msgstr "Buidar Paperera"
+msgstr "Buidar Memoera"
 
 #: src/ui/strings.vala:9
 msgid "Create/choose a notebook before creating a note"
@@ -481,7 +481,7 @@ msgstr "_Dreceres"
 
 #: src/ui/window/app_menu/app_menu.blp:42
 msgid "_About"
-msgstr "_Sobre Paper"
+msgstr "_Sobre Memo"
 
 #: src/ui/window/notebooks_bar/notebook_create_popup.blp:54
 msgid "Notebook Name"
@@ -521,7 +521,7 @@ msgstr "Editar"
 
 #: src/ui/window/notebooks_bar/notebook_menu.blp:26
 msgid "Move all to Trash"
-msgstr "Moure tot a la Paperera"
+msgstr "Moure tot a la Memoera"
 
 #: src/ui/window/sidebar/note_create_popup.blp:37
 msgid "Note Name"
@@ -533,11 +533,11 @@ msgstr "Crear Nota"
 
 #: src/ui/window/sidebar/note_menu.blp:16
 msgid "Restore from Trash"
-msgstr "Recuperar de la Paperera"
+msgstr "Recuperar de la Memoera"
 
 #: src/ui/window/sidebar/note_menu.blp:26
 msgid "Delete from Trash"
-msgstr "Eliminar de la Paperera"
+msgstr "Eliminar de la Memoera"
 
 #: src/ui/window/sidebar/note_menu.blp:46
 msgid "Move to Notebook…"
@@ -545,7 +545,7 @@ msgstr "Moure a Quadern…"
 
 #: src/ui/window/sidebar/note_menu.blp:56
 msgid "Move to Trash"
-msgstr "Moure a la Paperera"
+msgstr "Moure a la Memoera"
 
 #: src/ui/window/sidebar/note_menu.blp:66
 msgid "Open Containing Folder"
@@ -561,7 +561,7 @@ msgstr "Crea un quadern"
 
 #: src/ui/window/window.blp:165
 msgid "Trash is empty"
-msgstr "La paperera está buida"
+msgstr "La memoera está buida"
 
 #: src/ui/window/window.blp:196
 msgid "Back"

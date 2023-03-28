@@ -3,7 +3,7 @@
 public class SearchProvider : Object {
 
     Settings settings = new Settings (Config.APP_ID);
-	Paper.Provider notebook_provider = new Paper.Provider ();
+	Memo.Provider notebook_provider = new Memo.Provider ();
 
     public SearchProvider () {
 		settings.changed["notes-dir"].connect (() => {
@@ -12,7 +12,7 @@ public class SearchProvider : Object {
         update_storage_dir ();
     }
 
-    private HashTable<string, Paper.Note> notes;
+    private HashTable<string, Memo.Note> notes;
 
     struct ResultWithDistance {
         string result;
@@ -34,7 +34,7 @@ public class SearchProvider : Object {
 
     public void update_notes () {
         var notebooks = notebook_provider.notebooks;
-        notes = new HashTable<string, Paper.Note> (str_hash, str_equal);
+        notes = new HashTable<string, Memo.Note> (str_hash, str_equal);
         foreach (var notebook in notebooks) {
             notebook.load ();
             foreach (var note in notebook.loaded_notes) {
@@ -77,14 +77,14 @@ public class SearchProvider : Object {
 
     public void launch_search (string[] terms, uint32 timestamp) throws Error {
         Process.spawn_command_line_async (
-            "io.posidon.Paper --launch-search " + Shell.quote (string.joinv (" ", terms))
+            "io.github.daudix.Memo --launch-search " + Shell.quote (string.joinv (" ", terms))
         );
     }
 
     public void activate_result (string result_id, string[] terms, uint32 timestamp) throws Error {
         var note = notes[result_id];
         Process.spawn_command_line_async (
-            "io.posidon.Paper --open-note " + Shell.quote (note.id)
+            "io.github.daudix.Memo --open-note " + Shell.quote (note.id)
         );
     }
 }
@@ -92,7 +92,7 @@ public class SearchProvider : Object {
 public class SearchProviderApp : Application {
     public SearchProviderApp () {
         Object (
-            application_id: "io.posidon.Paper.SearchProvider",
+            application_id: "io.github.daudix.Memo.SearchProvider",
             flags: ApplicationFlags.IS_SERVICE
         );
     }

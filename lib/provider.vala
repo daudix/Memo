@@ -1,6 +1,6 @@
 using Gee;
 
-public errordomain Paper.ProviderError {
+public errordomain Memo.ProviderError {
     ALREADY_EXISTS,
     COULDNT_CREATE_FILE,
     NOTES_HAVENT_LOADED,
@@ -8,7 +8,7 @@ public errordomain Paper.ProviderError {
     COULDNT_MOVE,
 }
 
-public class Paper.Provider : Object, ListModel {
+public class Memo.Provider : Object, ListModel {
 
     public Gee.List<Note> get_all_notes () {
         var notes = new ArrayList<Note> ();

@@ -1,5 +1,5 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/markdown/heading_popover.ui")]
+[GtkTemplate (ui = "/io/github/daudix/Memo/markdown/heading_popover.ui")]
 public class GtkMarkdown.HeadingPopover : Gtk.Popover {
 
 	[GtkChild]

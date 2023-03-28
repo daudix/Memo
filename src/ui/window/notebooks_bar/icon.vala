@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/notebooks_bar/icon.ui")]
-public class Paper.NotebookIcon : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/notebooks_bar/icon.ui")]
+public class Memo.NotebookIcon : Gtk.Box {
 
 	construct {
 		accessible_role = Gtk.AccessibleRole.LABEL;

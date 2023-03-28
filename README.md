@@ -1,11 +1,11 @@
-# <img src="./data/icons/hicolor/scalable/apps/io.posidon.Paper.svg" height="64"/>Paper
+# <img src="./data/icons/hicolor/scalable/apps/io.github.daudix.Memo.svg" height="64"/>Memo
 
 ## Take notes in Markdown
 
 Contributions are appreciated!
 
 
-## Some of Paper features:
+## Some of Memo features:
 
  - Almost WYSIWYG markdown rendering
 
@@ -19,11 +19,11 @@ Contributions are appreciated!
 
  - Markdown document
 
-## Get Paper
+## Get Memo
 
-The recommended way of installing Paper is through [Flatpak](https://flatpak.org)
+The recommended way of installing Memo is through [Flatpak](https://flatpak.org)
 
-<a href="https://flathub.org/apps/details/io.posidon.Paper"><img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="200"/></a>
+<a href="https://flathub.org/apps/details/io.github.daudix.Memo"><img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="200"/></a>
 
 ## Libraries Used
  - [libadwaita](https://gitlab.gnome.org/GNOME/libadwaita)
@@ -33,5 +33,5 @@ The recommended way of installing Paper is through [Flatpak](https://flatpak.org
 The source code is GPLv3
 
 ## Notes Storage
-By default, notes are stored in `~/.var/app/io.posidon.Paper/data`,
+By default, notes are stored in `~/.var/app/io.github.daudix.Memo/data`,
 but that can be changed in preferences

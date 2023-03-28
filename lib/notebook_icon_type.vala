@@ -1,5 +1,5 @@
 
-public enum Paper.NotebookIconType {
+public enum Memo.NotebookIconType {
     FIRST,
     INITIALS,
     INITIALS_CAMEL_CASE,

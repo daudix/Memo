@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Paper.Application : Adw.Application {
+public class Memo.Application : Adw.Application {
 
 	private ActionEntry[] APP_ACTIONS = {
 		{ "new-note", on_new_note },
@@ -122,12 +122,12 @@ public class Paper.Application : Adw.Application {
 	private void on_about_action () {
 	    var about = new Adw.AboutWindow ();
 	    about.application_icon = Config.APP_ID;
-	    about.application_name = "Paper";
+	    about.application_name = "Memo";
 	    about.developers = {"Zagura"};
-	    about.issue_url = "https://gitlab.com/posidon_software/paper/issues";
+	    about.issue_url = "https://gitlab.com/posidon_software/memo/issues";
 	    about.license_type = Gtk.License.GPL_3_0;
 	    about.version = Config.VERSION;
-	    about.website = "https://gitlab.com/posidon_software/paper";
+	    about.website = "https://gitlab.com/posidon_software/memo";
 		about.transient_for = this.active_window;
 		about.present ();
 	}

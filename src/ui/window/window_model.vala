@@ -1,5 +1,5 @@
 
-public class Paper.WindowModel : Object {
+public class Memo.WindowModel : Object {
 
     public signal void state_changed (State state, NoteContainer? container);
     public signal void note_changed (Note? note);

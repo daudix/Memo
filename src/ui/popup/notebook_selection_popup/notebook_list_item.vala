@@ -1,6 +1,6 @@
 
-[GtkTemplate (ui = "/io/posidon/Paper/popup/notebook_list_item.ui")]
-public class Paper.NotebookListItem : Gtk.Box {
+[GtkTemplate (ui = "/io/github/daudix/Memo/popup/notebook_list_item.ui")]
+public class Memo.NotebookListItem : Gtk.Box {
 
 	[GtkChild]
 	unowned NotebookPreview icon;

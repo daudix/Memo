@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-[GtkTemplate (ui = "/io/posidon/Paper/window.ui")]
-public class Paper.Window : Adw.ApplicationWindow {
+[GtkTemplate (ui = "/io/github/daudix/Memo/window.ui")]
+public class Memo.Window : Adw.ApplicationWindow {
 
 	public bool cheatsheet_enabled { get; set; }
 
@@ -102,7 +102,7 @@ public class Paper.Window : Adw.ApplicationWindow {
 	        return false;
 	    });
 
-        Gtk.IconTheme.get_for_display (display).add_resource_path ("/io/posidon/Paper/graphics/");
+        Gtk.IconTheme.get_for_display (display).add_resource_path ("/io/github/daudix/Memo/graphics/");
 
         set_text_view_state (TextViewState.NO_NOTEBOOK);
 
@@ -125,7 +125,7 @@ public class Paper.Window : Adw.ApplicationWindow {
 	public Window (Application app) {
 		Object (
 		    application: app,
-		    title: "Paper",
+		    title: "Memo",
 		    icon_name: Config.APP_ID
 	    );
 
