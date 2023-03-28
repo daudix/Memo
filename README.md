@@ -1,6 +1,6 @@
 # <img src="./data/icons/hicolor/scalable/apps/io.github.daudix.Memo.svg" height="64"/>Memo
 
-## Take notes in Markdown
+## Take Markdown notes, in a pretty way
 
 Contributions are appreciated!
 
@@ -21,9 +21,11 @@ Contributions are appreciated!
 
 ## Get Memo
 
-The recommended way of installing Memo is through [Flatpak](https://flatpak.org)
+> Note Memo is not available to download from Flathub yet
 
-<a href="https://flathub.org/apps/details/io.github.daudix.Memo"><img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="200"/></a>
+<!-- The recommended way of installing Memo is through [Flatpak](https://flatpak.org)  
+
+<a href="https://flathub.org/apps/details/io.github.daudix.Memo"><img src="https://flathub.org/assets/badges/flathub-badge-en.png" width="200"/></a> -->
 
 ## Libraries Used
  - [libadwaita](https://gitlab.gnome.org/GNOME/libadwaita)
