@@ -1,0 +1,274 @@
+using Gtk 4.0;
+using Adw 1;
+
+template PaperWindow : Adw.ApplicationWindow {
+
+  styles ["transparent"]
+
+  Adw.ToastOverlay toast_overlay {
+
+    Adw.Leaflet leaflet {
+
+      Adw.LeafletPage sidebar {
+
+        navigatable: false;
+
+        child: Revealer sidebar_revealer {
+
+          transition-type: slide_right;
+          reveal-child: true;
+
+          child: Box {
+
+            orientation: horizontal;
+            hexpand: false;
+            vexpand: true;
+            width-request: 224;
+
+            .PaperNotebooksBar notebooks_bar {}
+
+            Box {
+
+              orientation: vertical;
+              hexpand: true;
+              vexpand: true;
+
+              styles ["notebook-sidebar"]
+
+              Adw.HeaderBar headerbar_sidebar {
+
+                show-start-title-buttons: bind notebooks_bar.paned inverted;
+                show-end-title-buttons: bind leaflet.folded;
+
+                [start]
+                Button button_create_note {
+                  icon-name: "list-add-symbolic";
+                  action-name: "app.new-note";
+                  tooltip-text: _("New Note");
+                }
+
+                [start]
+                Button button_empty_trash {
+                  icon-name: "edit-delete-symbolic";
+                  action-name: "app.empty-trash";
+                  tooltip-text: _("Empty Trash");
+                }
+
+                [title]
+                Adw.WindowTitle notebook_title {}
+
+                [end]
+                ToggleButton {
+                  icon-name: "system-search-symbolic";
+                  tooltip-text: _("Search Notes");
+                  active: bind notes_search_bar.search-mode-enabled bidirectional;
+                }
+              }
+
+              SearchBar notes_search_bar {
+                SearchEntry notes_search_entry {}
+              }
+
+              ScrolledWindow notebook_notes_list_scroller {
+
+                hexpand: true;
+                vexpand: true;
+                hscrollbar-policy: never;
+                vscrollbar-policy: external;
+
+                ListView notebook_notes_list {
+                  accessibility {
+                    labelled-by: notebook_title;
+                  }
+                }
+              }
+            }
+          };
+        };
+      }
+
+      Adw.LeafletPage edit_view_page {
+
+        navigatable: true;
+
+        child: Overlay {
+
+          hexpand: true;
+          vexpand: true;
+          width-request: 320;
+
+          styles ["text-area"]
+
+          [overlay]
+          .PaperEditView edit_view {
+            hexpand: true;
+            vexpand: true;
+          }
+
+          [overlay]
+          Box text_view_empty_notebook {
+
+            hexpand: true;
+            vexpand: true;
+            orientation: vertical;
+            halign: center;
+            valign: center;
+
+            Label {
+              label: _("Get started writing");
+              styles ["title-1"]
+            }
+
+            Button {
+
+              label: _("New Note");
+              action-name: "app.new-note";
+              margin-bottom: 32;
+              margin-top: 32;
+
+              styles ["pill", "suggested-action"]
+            }
+          }
+
+          [overlay]
+          Box text_view_no_notebook {
+
+            hexpand: true;
+            vexpand: true;
+            orientation: vertical;
+            halign: center;
+            valign: center;
+
+            Label {
+              label: _("Create a notebook");
+              styles ["title-1"]
+            }
+
+            Button {
+
+              label: _("New Notebook");
+              action-name: "app.new-notebook";
+              margin-bottom: 32;
+              margin-top: 32;
+
+              styles ["pill", "suggested-action"]
+            }
+          }
+
+          [overlay]
+          Box text_view_empty_trash {
+
+            hexpand: true;
+            vexpand: true;
+            orientation: vertical;
+            halign: center;
+            valign: center;
+
+            Label {
+              label: _("Trash is empty");
+              styles ["title-1"]
+            }
+          }
+
+          [overlay]
+          Revealer headerbar_edit_view_revealer {
+            valign: start;
+            reveal-child: true;
+            transition-type: crossfade;
+
+            child: Adw.HeaderBar headerbar_edit_view {
+
+              hexpand: true;
+              vexpand: false;
+              visible: true;
+
+              [title]
+              Box {
+                orientation: vertical;
+                valign: center;
+                CenterBox {
+                  orientation: horizontal;
+                  halign: center;
+
+                  styles ["title"]
+
+                  [start]
+                  Label save_indicator {
+                    label: "•";
+                    visible: false;
+                    hexpand: false;
+                    halign: end;
+                    margin-end: 6;
+                  }
+                  [center]
+                  Label note_title {
+                    halign: fill;
+                  }
+                }
+                Label note_subtitle {
+                  styles ["subtitle"]
+                }
+              }
+
+              [start]
+              ToggleButton {
+                icon-name: "sidebar-show-symbolic";
+                tooltip-text: _("Toggle Sidebar");
+                active: bind sidebar_revealer.reveal-child bidirectional;
+                visible: bind leaflet.folded inverted;
+              }
+
+              [start]
+              Button button_back {
+                icon-name: "go-previous-symbolic";
+                tooltip-text: _("Back");
+                visible: bind leaflet.folded;
+              }
+
+              [end]
+              MenuButton button_more_menu {
+                icon-name: "view-more-symbolic";
+                popover: PopoverMenu more_popover {
+                  menu-model: more_menu;
+                };
+              }
+
+              [end]
+              Button button_open_in_notebook {
+                icon-name: "document-edit-symbolic";
+                tooltip-text: _("Open in Notebook");
+              }
+
+              [end]
+              Button button_md_cheatsheet_headerbar {
+                icon-name: "dialog-information-symbolic";
+                tooltip-text: _("Markdown Cheatsheet");
+                action-name: "app.markdown-cheatsheet";
+              }
+            };
+          }
+        };
+      }
+    }
+  }
+}
+
+menu more_menu {
+  section {
+    item {
+      custom: "font-scale";
+    }
+  }
+  section {
+    item {
+      label: _("_Rename Note");
+      action: "app.edit-note";
+    }
+  }
+  section {
+    item {
+      label: _("_Export Note");
+      action: "app.export-note";
+    }
+  }
+}

@@ -1,0 +1,419 @@
+@define-color view_fg_color @window_fg_color;
+
+@define-color accent_color shade(@theme_color, 0.8);
+@define-color accent_bg_color @theme_color;
+
+/* @define-color card_shade_color @theme_color; */
+
+@define-color headerbar_bg_color transparent;
+@define-color headerbar_fg_color @window_fg_color;
+@define-color headerbar_border_color @borders;
+@define-color headerbar_backdrop_color transparent;
+
+@define-color notebooks_bar_bg_color shade(@window_bg_color, 0.96);
+@define-color notebooks_bar_fg_color shade(@window_fg_color, 0.4);
+
+@define-color suggest_button_bg_color alpha(shade(@theme_color, 1.5), 0.28);
+@define-color suggest_button_bg_color_hover shade(@suggest_button_bg_color, 0.85);
+
+@define-color selected_bg_color alpha(mix(@theme_color, #efffa0, 0.34), 0.3);
+@define-color hover_bg_color rgba(0, 0, 0, .05);
+
+
+listview, window.transparent {
+  background-color: transparent;
+}
+
+searchbar box,
+headerbar {
+  border: none;
+  box-shadow: none;
+}
+
+.preferences headerbar,
+searchbar.overlaid box,
+headerbar.bordered,
+headerbar.overlaid {
+  box-shadow: inset 0 -1px @headerbar_border_color;
+}
+
+/*
+ *
+ *   NOTEBOOKS BAR
+ *
+ */
+
+.notebooks-bar {
+  background-color: @notebooks_bar_bg_color;
+  color: @notebooks_bar_fg_color;
+}
+
+.notebooks-bar > button,
+.notebooks-bar > windowhandle > menubutton {
+  margin: 6px;
+}
+
+.notebooks-bar:not(.paned) > headerbar > windowhandle > box {
+  padding: 0;
+}
+
+.notebooks-bar .all-button,
+.notebooks-bar .trash-button,
+.notebooks-bar listview row {
+  margin: 0px;
+  min-width: 26px;
+  min-height: 34px;
+  padding: 8px 10px;
+  border-radius: 0;
+  transition: background-color .1s;
+}
+
+.notebooks-bar .trash-button.overlaid {
+  border-top: solid 1px @borders;
+}
+
+.notebooks-bar .all-button:checked,
+.notebooks-bar .trash-button:checked,
+.notebooks-bar listview row:selected {
+  background-color: @selected_bg_color;
+}
+
+.notebooks-bar:not(.paned) .all-button:checked,
+.notebooks-bar:not(.paned) listview row:selected {
+  background-color: @selected_bg_color;
+  box-shadow: inset 0 1px @borders, inset 0 -1px @borders;
+}
+
+.notebooks-bar .all-button:checked .marker,
+.notebooks-bar .trash-button:checked .marker,
+.notebooks-bar listview row:selected .marker {
+  background-color: @accent_color;
+  margin: 4px 6px 4px -9px;
+  border-radius: 0 99px 99px 0;
+}
+
+.notebooks-bar .all-button:checked .marker,
+.notebooks-bar .trash-button:checked .marker {
+  background-color: @notebooks_bar_fg_color;
+}
+
+.notebooks-bar .all-button:hover:not(:checked),
+.notebooks-bar .trash-button:hover:not(:checked),
+.notebooks-bar listview row.activatable:hover:not(:selected) {
+  background-color: @hover_bg_color;
+}
+
+.notebooks-bar.paned listview row,
+.notebooks-bar.paned .all-button,
+.notebooks-bar.paned .trash-button {
+  padding: 2px;
+  font-weight: normal;
+  border-radius: 6px;
+  margin: 1px 6px;
+}
+
+.notebooks-bar.paned listview row .notebook {
+  margin: 5px 8px;
+  font-size: .62em;
+}
+
+.notebooks-bar.paned > .trash-button {
+  margin: 6px;
+}
+
+.notebooks-bar.paned .all-button image,
+.notebooks-bar.paned .trash-button image {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.notebook {
+  background-color: mix(@notebook_color, #fffff0, 0.15);
+
+  border-radius: 0 0.35em 0.35em 0;
+
+  min-width: 1.857142857em;
+  min-height: 2.428571429em;
+
+  color: @notebook_fg_color;
+  font-size: 14px;
+
+  box-shadow:
+    inset 0.2em 0 0 shade(@notebook_color, 0.8),
+
+    inset 0.3em 0 0 mix(@notebook_color, #000, 0.25),
+    inset 0 -0.142857143em 0 #a0a5aa;
+}
+
+.notebook > label {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.notebook > image {
+  -gtk-icon-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  -gtk-icon-size: 1em;
+}
+
+.notebook-preview {
+  margin: 20px;
+  font-size: 2.4em;
+}
+
+.icon-selector > popover gridview {
+  background: 0;
+}
+
+.icon-selector > popover gridview child {
+  padding: 8px;
+  -gtk-icon-size: 24px;
+}
+
+.icon-selector > popover > contents {
+  padding: 0;
+}
+
+.icon-selector > popover > contents > scrolledwindow > * {
+  padding: 8px;
+}
+
+/* Taken from Gnome Text Editor, thanks uwu */
+.theme-selector {
+  margin: 9px;
+}
+.theme-selector checkbutton {
+  padding: 1px;
+  min-height: 44px;
+  min-width: 44px;
+  background-clip: content-box;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1px @borders;
+}
+.theme-selector checkbutton:checked {
+  box-shadow: inset 0 0 0 2px @theme_selected_bg_color;
+}
+.theme-selector checkbutton.auto {
+  background-image: linear-gradient(to bottom right, #fff 49.99%, #202020 50.01%);
+}
+.theme-selector checkbutton.light {
+  background-color: #fff;
+}
+.theme-selector checkbutton.dark {
+  background-color: #202020;
+}
+.theme-selector checkbutton radio {
+  -gtk-icon-source: none;
+  border: none;
+  background: none;
+  box-shadow: none;
+  min-width: 12px;
+  min-height: 12px;
+  transform: translate(27px, 14px);
+  padding: 2px;
+}
+.theme-selector checkbutton radio:checked {
+  -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+  background-color: @accent_bg_color;
+  color: @accent_fg_color;
+}
+
+
+/*
+ *
+ *   NOTEBOOK SIDEBAR
+ *
+ */
+
+.custom-popover-menu > * {
+  padding: 6px;
+}
+
+.modelbutton {
+  font-weight: 400;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 32px;
+  color: @popover_fg_color;
+}
+
+.notebook-sidebar {
+  border-right: solid 1px @borders;
+  border-left: solid 1px @borders;
+  background-color: @window_bg_color;
+}
+
+.notebook-sidebar listview {
+  padding: 3px 0;
+}
+
+.notebook-sidebar listview row {
+  padding: 0;
+  background: 0;
+}
+
+.notebook-sidebar listview row:focus {
+  border: none;
+  outline: none;
+}
+
+.notebook-sidebar listview row > .note-card {
+  transition: background-color .2s, outline .1s, outline-offset .1s;
+  outline: 3px solid transparent;
+  outline-offset: 5px;
+  padding: 7px 10px 12px 10px;
+  margin: 3px 6px;
+  border-radius: 8px;
+}
+
+.notebook-sidebar listview row:hover:not(:selected):not(:active) > .note-card:not(.dragged) {
+  transition: background-color .1s, outline .1s, outline-offset .1s;
+  background-color: @hover_bg_color;
+}
+
+.notebook-sidebar listview row:active > .note-card:not(.dragged) {
+  transition: background-color .4s, outline .1s, outline-offset .1s;
+  background-color: rgba(0, 0, 0, .12);
+}
+
+.notebook-sidebar listview row:selected > .note-card:not(.dragged) {
+  transition:  background-color 0, outline .1s, outline-offset .1s;
+  background-color: @selected_bg_color;
+}
+
+.notebook-sidebar listview row:focus-visible:not(:selected):not(:active):not(.dragged) > .note-card {
+  transition: background-color .2s, outline .2s, outline-offset .2s;
+  outline: 2px solid alpha(@accent_color, .5);
+  outline-offset: -1px;
+}
+
+.notebook-sidebar listview row > .dragged {
+  background-color: shade(mix(@window_bg_color, #fff, 0.04), 1.4);
+}
+
+.note-card > box .edit {
+  min-width: 0;
+  min-height: 0;
+  opacity: 0;
+  margin-left: 8px;
+  transition-delay: .05s;
+}
+.note-card > box:hover .edit {
+  opacity: 1;
+}
+
+.note-card > box entry.heading {
+  min-height: 0;
+}
+
+.note-card > box .apply {
+  min-width: 0;
+  min-height: 0;
+}
+
+.note-card > box .extension {
+  background-color: alpha(@window_fg_color, .05);
+  color: alpha(@window_fg_color, .5);
+  padding: 0 4px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: .7em;
+  font-weight: 700;
+}
+
+
+/*
+ *
+ *   TEXT VIEW
+ *
+ */
+
+.text-area {
+  background-color: @view_bg_color;
+}
+
+.text-area gutterrenderer {
+  background-color: @view_bg_color;
+  color: alpha(@view_fg_color, 0.36);
+  min-width: 32px;
+  font-size: 12px;
+}
+
+.text-area headerbar {
+  background: @view_bg_color;
+  color: @view_fg_color;
+}
+
+.markdown-view {
+  margin-right: 32px;
+}
+
+.markdown-view:disabled text {
+  background: @view_bg_color;
+}
+
+.bottom-toolbar {
+  background-color: @view_bg_color;
+  color: @view_fg_color;
+  box-shadow: inset 0 1px @borders;
+}
+
+.bottom-toolbar button.combo:not(:hover):not(:checked) {
+  background: transparent;
+}
+
+
+/*
+ *
+ *   NOTEBOOK LIST
+ *
+ */
+
+.notebook-list {
+  padding: 3px 0;
+}
+
+.notebook-list row {
+  padding: 0;
+  background: 0;
+}
+
+.notebook-list row:focus {
+  border: none;
+  outline: none;
+}
+
+.notebook-list row > box {
+  outline: 3px solid transparent;
+  outline-offset: 5px;
+  padding: 0px 6px;
+  margin: 3px 6px;
+  border-radius: 8px;
+}
+
+.notebook-list row:hover:not(:selected):not(:active) > box {
+  background-color: rgba(0, 0, 0, .05);
+}
+
+.notebook-list row:active > box {
+  background-color: rgba(0, 0, 0, .18);
+}
+
+.notebook-list row:selected > box {
+  background-color: @selected_bg_color;
+  color: @window_fg_color;
+}
+
+.notebook-list row:focus:not(:selected):not(:active) > box {
+  transition: outline .2s, outline-offset .2s;
+  outline: 2px solid alpha(@accent_color, .5);
+  outline-offset: -1px;
+}
+
+.notebook-list row .notebook {
+  margin: 6px 8px;
+  font-size: .62em;
+}
+

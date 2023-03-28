@@ -1,0 +1,36 @@
+using Gtk 4.0;
+using Adw 1;
+using GtkSource 5;
+
+template PaperEditView : Box {
+
+  orientation: vertical;
+
+  styles ["text-area"]
+
+  ScrolledWindow scrolled_window {
+
+    hexpand: true;
+    vexpand: true;
+
+    .GtkMarkdownView markdown_view {
+
+      halign: center;
+      hexpand: true;
+      vexpand: true;
+      tab-width: 4;
+      auto-indent: true;
+      wrap-mode: word-char;
+      top-margin: 64;
+      bottom-margin: 64;
+      show-gutter: true;
+
+      styles ["markdown-view"]
+    }
+  }
+
+  .PaperToolbar toolbar {
+    hexpand: true;
+    vexpand: false;
+  }
+}

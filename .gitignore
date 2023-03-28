@@ -1,0 +1,6 @@
+**/*~
+/subprojects/*/
+_build
+.flatpak
+.var
+.flatpak-builder

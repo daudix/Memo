@@ -1,0 +1,23 @@
+using Gtk 4.0;
+
+template PaperNotebookPreview : Box {
+
+  halign: center;
+  hexpand: false;
+
+  styles ["notebook"]
+
+  Label label {
+    hexpand: true;
+    vexpand: false;
+    halign: center;
+    valign: center;
+  }
+
+  Image icon {
+    hexpand: true;
+    vexpand: false;
+    halign: center;
+    valign: center;
+  }
+}

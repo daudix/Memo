@@ -1,0 +1,68 @@
+using Gtk 4.0;
+
+template PaperNoteCard : Box {
+
+  accessibility {
+    labelled-by: label;
+    described-by: descrption_box;
+  }
+
+  hexpand: true;
+  orientation: vertical;
+
+  styles ["note-card"]
+
+  Box {
+    hexpand: true;
+    orientation: horizontal;
+
+    Label label {
+      ellipsize: end;
+      visible: bind entry.visible inverted;
+      styles ["heading"]
+    }
+
+    Box {
+      orientation: horizontal;
+      hexpand: true;
+
+      styles ["linked"]
+
+      Entry entry {
+        truncate-multiline: true;
+        visible: false;
+        hexpand: true;
+        styles ["heading"]
+      }
+      Button button_apply {
+        icon-name: "apply-symbolic";
+        visible: bind entry.visible;
+        styles ["apply", "suggested-action"]
+      }
+    }
+
+    Button button_edit {
+      halign: end;
+      icon-name: "document-edit-symbolic";
+      visible: bind entry.visible inverted;
+      styles ["edit", "flat"]
+    }
+  }
+
+
+  Box descrption_box {
+    hexpand: true;
+    orientation: horizontal;
+
+    Label subtitle {
+      ellipsize: end;
+      hexpand: true;
+      halign: start;
+      styles ["caption", "dim-label"]
+    }
+
+    Label extension {
+      styles ["caption", "extension"]
+    }
+  }
+}

@@ -1,0 +1,132 @@
+using Gtk 4.0;
+using Adw 1;
+
+template PaperPreferencesWindow : Adw.PreferencesWindow {
+
+  default-width: 560;
+  default-height: 480;
+  search-enabled: false;
+  modal: true;
+
+  Adw.PreferencesPage {
+    Adw.PreferencesGroup {
+      Adw.ActionRow {
+
+        title: _("Note Font");
+        subtitle: _("The font notes will be displayed in");
+        icon-name: "font-x-generic-symbolic";
+        activatable-widget: font_button;
+
+        FontButton font_button {
+          title: _("Pick a font for displaying the notes' content");
+          use-size: false;
+          level: family;
+          valign: center;
+        }
+      }
+      Adw.ActionRow {
+
+        title: _("Monospace Font");
+        subtitle: _("The font code will be displayed in");
+        icon-name: "font-x-generic-symbolic";
+        activatable-widget: font_button_monospace;
+
+        FontButton font_button_monospace {
+          title: _("Pick a font for displaying code");
+          use-size: false;
+          level: family;
+          valign: center;
+          preview-text: "function var struct enum type impl >= <= => =< == === <== ==> >- <- -> -< :: != ~= := =: >> << >>=";
+        }
+      }
+    }
+    Adw.PreferencesGroup {
+      Adw.ActionRow {
+
+        title: _("OLED Mode");
+        subtitle: _("Makes the dark theme pitch black");
+        icon-name: "dark-mode-symbolic";
+        activatable-widget: oled_mode;
+
+        Switch oled_mode {
+          valign: center;
+        }
+      }
+    }
+    Adw.PreferencesGroup {
+      Adw.ActionRow {
+
+        title: _("Enable Toolbar");
+        icon-name: "toolbar-symbolic";
+        activatable-widget: enable_toolbar;
+
+        Switch enable_toolbar {
+          valign: center;
+        }
+      }
+      Adw.ActionRow {
+
+        title: _("Enable Cheatsheet");
+        icon-name: "dialog-information-symbolic";
+        activatable-widget: enable_cheatsheet;
+
+        Switch enable_cheatsheet {
+          valign: center;
+        }
+      }
+    }
+    Adw.PreferencesGroup {
+      Adw.ActionRow {
+
+        title: _("3-Pane Layout");
+        icon-name: "sidebar-show-symbolic";
+        activatable-widget: enable_3_pane;
+
+        Switch enable_3_pane {
+          valign: center;
+        }
+      }
+      Adw.ActionRow {
+
+        title: _("Limit Note Width");
+        subtitle: _("Limits how wide the text area can stretch");
+        icon-name: "stretch-horizontal-symbolic";
+        activatable-widget: limit_note_width;
+
+        Switch limit_note_width {
+          valign: center;
+        }
+      }
+    }
+    Adw.PreferencesGroup {
+      Adw.ActionRow {
+
+        title: _("Notes Storage Location");
+        subtitle: _("Where the notebooks are stored (requires app restart)");
+        icon-name: "folder-symbolic";
+        activatable-widget: notes_dir_button;
+
+        Box {
+
+          orientation: horizontal;
+
+          styles ["linked"]
+
+          Button notes_dir_button {
+            valign: center;
+            width-request: 128;
+
+            child: Label notes_dir_label {
+              ellipsize: start;
+            };
+          }
+
+          Button notes_dir_button_reset {
+            valign: center;
+            icon-name: "view-refresh-symbolic";
+          }
+        }
+      }
+    }
+  }
+}

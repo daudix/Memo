@@ -1,0 +1,124 @@
+using Gtk 4.0;
+using Adw 1;
+
+template PaperNotebookCreatePopup : Adw.Window {
+
+  default-width: 320;
+  resizable: false;
+  modal: true;
+
+  ShortcutController {
+
+    scope: managed;
+
+    Shortcut {
+      trigger: "Escape";
+      action: "action(window.close)";
+    }
+  }
+
+  WindowHandle {
+    Box {
+
+      spacing: 16;
+      orientation: vertical;
+      hexpand: true;
+      margin-bottom: 16;
+
+      Overlay {
+
+        [overlay]
+        Adw.HeaderBar {
+
+          hexpand: true;
+          vexpand: false;
+          valign: start;
+
+          [title]
+          Box {}
+        }
+
+        .PaperNotebookPreview preview {
+          margin-top: 18;
+          styles ["notebook-preview"]
+        }
+      }
+
+      Box {
+
+        orientation: horizontal;
+        margin-start: 18;
+        margin-end: 18;
+
+        Entry entry {
+          placeholder-text: _("Notebook Name");
+          hexpand: true;
+        }
+      }
+
+      Box {
+
+        orientation: horizontal;
+        margin-start: 18;
+        margin-end: 18;
+
+        styles ["linked"]
+
+        ComboBoxText icon_type_combobox {
+
+          hexpand: true;
+
+          items [
+            first: _("First Characters"),
+            initials: _("Initials"),
+            camel_case: _("Initials: camelCase"),
+            snake_case: _("Initials: snake_case"),
+            predefined_icon: _("Icon"),
+          ]
+        }
+
+        MenuButton button_icon {
+
+          visible: false;
+          hexpand: false;
+
+          styles ["icon-selector"]
+
+          popover: Popover {
+            child: ScrolledWindow {
+
+              vexpand: false;
+              height-request: 145;
+	            hscrollbar-policy: never;
+	            vscrollbar-policy: external;
+
+              GridView icon_grid {
+                hexpand: true;
+                vexpand: false;
+                min-columns: 4;
+                max-columns: 4;
+              }
+            };
+          };
+        }
+
+        ColorButton button_color {
+          title: _("Notebook Color");
+          modal: true;
+          show-editor: false;
+          rgba: "#2ec27eff";
+          hexpand: false;
+        }
+      }
+
+      Button button_create {
+
+        label: _("Create Notebook");
+        margin-start: 16;
+        margin-end: 16;
+
+        styles ["suggested-action"]
+      }
+    }
+  }
+}

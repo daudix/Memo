@@ -1,0 +1,34 @@
+[Desktop Entry]
+Type=Application
+Terminal=false
+Exec=@app_id@
+DBusActivatable=true
+StartupWMClass=@app_id@
+
+Name=Paper
+GenericName=Notes Manager
+Comment=Take notes
+
+Keywords=Notebook;Note;Notes;Text;Markdown;Notepad;Write;School;Post-it;Sticky;
+Icon=@app_id@
+Categories=GTK;Utility;TextEditor;GNOME;
+StartupNotify=true
+X-Purism-FormFactor=Workstation;Mobile;
+X-GNOME-SingleWindow=true
+Actions=new-note;new-notebook;markdown-cheatsheet;preferences;
+
+[Desktop Action new-note]
+Name=New Note
+Exec=@app_id@ --new-note
+
+[Desktop Action new-notebook]
+Name=New Notebook
+Exec=@app_id@ --new-notebook
+
+[Desktop Action markdown-cheatsheet]
+Name=Markdown Cheatsheet
+Exec=@app_id@ --markdown-cheatsheet
+
+[Desktop Action preferences]
+Name=Preferences
+Exec=@app_id@ --preferences

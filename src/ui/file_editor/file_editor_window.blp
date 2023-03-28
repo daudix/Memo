@@ -1,0 +1,64 @@
+using Gtk 4.0;
+using Adw 1;
+
+template PaperFileEditorWindow : Adw.ApplicationWindow {
+  default-width: 720;
+  default-height: 512;
+
+  Adw.ToastOverlay toast_overlay {
+
+    Overlay {
+
+      hexpand: true;
+      vexpand: true;
+      width-request: 390;
+
+      styles ["text-area"]
+
+      .PaperEditView edit_view {
+        hexpand: true;
+        vexpand: true;
+        width-request: 390;
+      }
+
+      [overlay]
+      Adw.HeaderBar headerbar {
+
+        hexpand: true;
+        vexpand: false;
+        valign: start;
+
+        [title]
+        Box {
+          orientation: vertical;
+          valign: center;
+          CenterBox {
+            orientation: horizontal;
+            halign: center;
+
+            styles ["title"]
+
+            [start]
+            Label save_indicator {
+              label: "•";
+              visible: false;
+              hexpand: false;
+              halign: end;
+              margin-end: 6;
+            }
+            [center]
+            Label file_title {
+              halign: fill;
+            }
+          }
+          Label file_subtitle {
+            styles ["subtitle"]
+          }
+        }
+
+        [end]
+        .PaperAppMenu {}
+      }
+    }
+  }
+}
