@@ -103,7 +103,7 @@ public class Memo.Window : Adw.ApplicationWindow {
 	        return false;
 	    });
 
-        Gtk.IconTheme.get_for_display (display).add_resource_path ("/io/github/daudix/Memo/graphics/");
+        Gtk.IconTheme.get_for_display (display).add_resource_path ("/io/github/daudix/Memo/data/icons/hicolor/symbolic");
 
         set_text_view_state (TextViewState.NO_NOTEBOOK);
 

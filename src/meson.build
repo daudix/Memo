@@ -1,46 +1,35 @@
-memo_sources = [
+vapi_sources = files(
+  'config.vapi',
+)
+
+memo_vala_sources = files(
   'main.vala',
   'application.vala',
-
-  'ui/strings.vala',
-
-  'ui/window/window.vala',
-  'ui/window/window_model.vala',
-  'ui/preferences/preferences.vala',
-
-  'ui/edit_view/edit_view.vala',
-  'ui/edit_view/toolbar/toolbar.vala',
-  'ui/file_editor/file_editor_window.vala',
-
-  'ui/fuzzy_string_sorter.vala',
-
-  'ui/window/app_menu/app_menu.vala',
-  'ui/window/font_scale/font_scale.vala',
-  'ui/window/notebooks_bar/notebooks_bar.vala',
-  'ui/window/notebooks_bar/icon.vala',
-  'ui/window/notebooks_bar/notebook_menu.vala',
-  'ui/window/notebooks_bar/notebook_create_popup.vala',
-  'ui/window/notebooks_bar/notebook_sidebar_item.vala',
-
-  'ui/window/sidebar/note_card.vala',
-  'ui/window/sidebar/note_menu.vala',
-  'ui/window/sidebar/note_create_popup.vala',
-
-  'ui/edit_view/cheatsheet/markdown_cheatsheet.vala',
-
-  'ui/popup/notebook_selection_popup/notebook_list_item.vala',
-  'ui/popup/notebook_selection_popup/notebook_selection_popup.vala',
-
-  'ui/widgets/markdown/markdown_buffer.vala',
-  'ui/widgets/markdown/markdown_view.vala',
-  'ui/widgets/markdown/heading_popover.vala',
-
-  'ui/widgets/theme_selector/theme_selector.vala',
-  'ui/widgets/notebook_icon/notebook_preview.vala',
-
-  lib_sources,
-
   'color.vala',
+)
+
+memo_sources = [
+  lib_sources,
+  vapi_sources,
+  memo_vala_sources,
+  resources
+]
+
+memo_vala_args = [
+  '--target-glib', '2.72',
+  '--vapidir', meson.current_source_dir(),
+  '--gresources', resource_files,
+]
+
+memo_dependencies = [
+  gee,
+  gio,
+  glib,
+  gmodule,
+  gobject,
+  gtk,
+  gtksourceview,
+  libadwaita
 ]
 
 subdir('ui')
@@ -69,30 +58,8 @@ configure_file(output: 'config.h', configuration: conf)
 cc = meson.get_compiler('c')
 m_dep = cc.find_library('m', required: false)
 
-memo_deps = [
-  dependency('glib-2.0'),
-  dependency('gobject-2.0'),
-  dependency('gmodule-2.0'),
-  dependency('gtk4'),
-  dependency('gio-2.0'),
-  dependency('gee-0.8'),
-  dependency('libadwaita-1'),
-  dependency('gtksourceview-5'),
-  m_dep,
-]
-
-executable(
-  meson.project_name(),
-  memo_sources,
-  c_args: [
-    '-DGETTEXT_PACKAGE="' + app_id + '"'
-  ],
-  vala_args: [
-    meson.project_source_root() + '/src/config.vapi',
-    '--target-glib=2.72.1',
-    '--gresourcesdir=' + generated_resources_dir,
-  ],
-  dependencies: memo_deps,
-  implicit_include_directories: true,
-  install: true,
+executable('memo', memo_sources,
+  vala_args: memo_vala_args,
+  dependencies: memo_dependencies,
+  install: true
 )
