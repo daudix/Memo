@@ -1,3 +1,6 @@
+> **Warning**
+> This repository has been moved to [Codeberg](https://codeberg.org/daudix-UFO/Memo), all future work will continue there.
+
 <h1 align="center">
   <img src="data/icons/hicolor/scalable/apps/io.github.daudix.Memo.svg" alt="Memo" width="192" height="192"/>
   <br>
